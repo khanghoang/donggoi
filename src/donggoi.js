@@ -2,6 +2,7 @@ const { readFileSync } = require('fs');
 const { parse } = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const { resolve } = require('path');
+const { transform } = require('@babel/core');
 
 const modules = [];
 let id = 0;
@@ -19,7 +20,10 @@ const parseCode = file => {
             const module = {
                 relativePath,
                 absolutePath,
-                id: id++
+                id: id++,
+                code: transform(codeStr, {
+                    presets: ['@babel/preset-env']
+                }).code
             };
 
             modules.push(module);
