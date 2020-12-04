@@ -1,5 +1,5 @@
-import name from './name';
+import name from './name.js';
 
 export const hello = () => {
-    return `Hello, ${name}`;
+    console.log(`Hello, ${name}`);
 };

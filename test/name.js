@@ -1,1 +1,1 @@
-export default 'Khang';
+export default 'Sam';
