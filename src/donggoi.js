@@ -4,15 +4,13 @@ const traverse = require('@babel/traverse').default;
 const path = require('path');
 const { transform } = require('@babel/core');
 
-exports.donggoi = async ({
-    entryFile,
-    srcDir,
-    destDir
-} = {
-    entryFile: './main.js',
-    srcDir: path.resolve(__dirname, '../test'),
-    destDir: path.resolve(__dirname, '../dist')
-}) => {
+exports.donggoi = async (
+    { entryFile, srcDir, destDir } = {
+        entryFile: './main.js',
+        srcDir: path.resolve(__dirname, '../test'),
+        destDir: path.resolve(__dirname, '../dist')
+    }
+) => {
     const modules = {};
     let id = 0;
     let entryFileCode = ``;
